@@ -54,13 +54,27 @@ public class PTra04_05 {
 
 
 
-			} else {
+			} else if (cpuHand == 2) {
 				System.out.println("パー！！");
 
 
 
 			}
+			if (cpuHand == 0 && myHand == 2) {
+				break;
+
+
+
+			} else if (cpuHand == 1 && myHand == 0) {
+				break;
+
+
+
+			}  else if (cpuHand == 2 && myHand == 1) {
+				break;
+
 
 		}
 	}
+}
 }

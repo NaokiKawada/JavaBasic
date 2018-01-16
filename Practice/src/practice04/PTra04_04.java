@@ -13,16 +13,16 @@ public class PTra04_04 {
 		java.util.Scanner scanner = new java.util.Scanner(System.in);
 
 		// ★ int型の変数mapを宣言して、100で初期化してください
-
+        int map = 100;
 
 		// ★ int型の変数progressを宣言して、0で初期化してください
-
+        int progres = 0;
 
 		System.out.println("このスゴロクは、" + map + "マスです。");
 		System.out.println("=========< START >==========");
 
 		// ★ 変数progressが変数mapの数より少ない限り繰り返しを行う条件式を記述してください
-		while () {
+		while (map > progres) {
 
 			System.out.println("サイコロを振ります。Enterを押してください");
 
@@ -35,13 +35,14 @@ public class PTra04_04 {
 			dice = dice + 1;
 
 			// ★ サイコロを振って出た目を、変数progressに加算してください
-
+            progres = progres + dice;
 
 			// ★ 「残り##マス」と出力してください（##には、残りマスの数を入れてください）
-
-		}
+           if(map > progres) {
+   			System.out.println("残り" + ( map - progres ) +  "マス");
+		} else {
 
 		System.out.println("=========< GOAL >==========");
 		System.out.println("おつかれさまでした。");
 	}
-}
+}}}
