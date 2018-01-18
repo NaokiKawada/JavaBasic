@@ -12,5 +12,16 @@ public class PTra09_01 {
 
 		// ★ 変数strを、Util内のメソッドを用いて0.5秒間隔で表示させなさい
 		// ※ Utilはインポートしても良いし、完全限定名で記述しても良いです
-	}
-}
+
+		char[] array = str.toCharArray();
+			for (int i = 0; i < str.length(); i++) {
+				System.out.print(array[i]);
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					/* エラーが発生した場合はここにくる */
+				}
+			}
+		}
+	  }
+
