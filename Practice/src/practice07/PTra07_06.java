@@ -16,6 +16,20 @@ public class PTra07_06 {
 		};
 
 		// ★ 配列arrayに格納されている全ての数字の平均を出力してください
+		//array[0][0]=500
+		double sum = 0 ;
+		int length = 0 ;
+		for (int i = 0; i < array.length; i++) {
+			 length += array[i].length ;
+			  for (int j = 0; j < array[i].length; j++) {
+				   sum += array[i][j] ;
+			  }
+		}
+		System.out.println(sum);
+		System.out.println(length);
+		System.out.println(sum / length);
 
 	}
 }
+
+
