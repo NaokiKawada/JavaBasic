@@ -17,6 +17,7 @@ public class PTra08_02 {
 
 		// ★ 変数receiveを出力してください
 		System.out.println(receive);
+
 	}
 
 	/*

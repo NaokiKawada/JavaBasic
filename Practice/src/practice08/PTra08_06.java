@@ -34,6 +34,7 @@ public class PTra08_06 {
 		System.out.println("「" + message + "」");
 	}
 
+
 	// ★ dispValueを引数doubleでオーバーロードしてください。処理は同じ
 	public static void dispValue(double message) {
 		System.out.println("「" + message + "」");
