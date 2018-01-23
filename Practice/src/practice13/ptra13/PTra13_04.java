@@ -31,7 +31,10 @@ public class PTra13_04 {
 		 */
 		while(true) {
 
-			if(slime.damage(hero.attack())) {
+			int heroAtack = hero.attack();
+			boolean slimeDeadFlg = slime.damage(heroAtack);
+
+			if(slimeDeadFlg) {
 				System.out.println(hero.getName()+"は"+slime.getName()+"との戦闘に勝利した");
 				break;
 			}
