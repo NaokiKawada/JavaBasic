@@ -34,11 +34,17 @@ public class PTra10_03 {
 
 		// ★ 配列にした値を、usの各フィールドに代入してください
 		// ユーザIDに該当する値が数値でなかった場合は、エラーでプログラムが止まっても良いです
-		for (int i = 0; i < resultArray.length; i++) {
+		us.userId = Integer.parseInt(resultArray[0]);
+		us.userNm = resultArray[1];
+		us.mail = resultArray[2];
+		us.password = resultArray[3];
+
 
 
 		// ★ 変数usに格納されているインスタンスの、フィールドuserId, userNm, mail, passwordを出力してください
-			System.out.println(resultArray[i]);
-        }
+        System.out.println(us.userId);
+        System.out.println(us.userNm);
+        System.out.println(us.mail);
+        System.out.println(us.password);
 	}
 }
