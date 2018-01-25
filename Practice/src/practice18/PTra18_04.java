@@ -44,23 +44,43 @@ public class PTra18_04 {
         }
 
 		/* ★ ①のArrayListの中からGK1名、DF4名、MF4名, FW2名をランダムで出力してください
-		 	String [] curriculums = jRoom.getCurriculum();
 		 	*/
         Collections.shuffle(playerList);
 
+        int menber = 0;
+
         for(int i = 0 ; i < playerList.size() ; i++) {
        	 Player player = playerList.get(i);
-       	if(player.getPosition().equals("GK")) {
+       	if(player.getPosition().equals("GK") && menber < 1) {
        		 System.out.println(player);
+       		 menber++;
        	 }
-       	if(player.getPosition().equals("DF")) {
+         }
+
+    	 menber = 0;
+        for(int i = 0 ; i < playerList.size() ; i++) {
+          	 Player player = playerList.get(i);
+       	if(player.getPosition().equals("DF")&& menber < 4) {
       		 System.out.println(player);
+      		 menber++;
       	 }
-       	if(player.getPosition().equals("MF")) {
+         }
+
+   	 	menber = 0;
+        for(int i = 0 ; i < playerList.size() ; i++) {
+          	 Player player = playerList.get(i);
+       	if(player.getPosition().equals("MF")&& menber < 4) {
      		 System.out.println(player);
+      		 menber++;
      	 }
-       	if(player.getPosition().equals("FW")) {
-     		 System.out.println(player);
+         }
+
+   	 	menber = 0;
+        for(int i = 0 ; i < playerList.size() ; i++) {
+          	 Player player = playerList.get(i);
+       	if(player.getPosition().equals("FW")&& menber < 2) {
+       		System.out.println(player);
+      		 menber++;
      	 }
        }
 	}
