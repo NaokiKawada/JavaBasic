@@ -6,6 +6,8 @@ package practice10;
  * Copyright(c) Rhizome Inc. All Rights Reserved.
  */
 
+import java.util.Scanner;
+
 public class PTra10_06 {
 
 	/*
@@ -17,77 +19,50 @@ public class PTra10_06 {
 		/*
 		 * carインスタンスを3件作成し、それぞれの色、ガソリンを入力して決定してください
 		 * 各carインスタンスのrunメソッドを実行して、それぞれ「目的地にまでn時間かかりました。残りのガソリンは、xリットルです」を出力してください。
+		 */
+		// 車の製造
+		Scanner scanner = new Scanner(System.in);
+		Car[] cars = new Car[3];
+		for (int i = 0; i < cars.length; i++) {
+			System.out.println("------------------------------------");
+			System.out.println((i + 1) + "台目");
+			cars[i] = new Car();
 
+			System.out.println("シリアル№、車体カラー、ガソリン量をカンマ区切りで入力してください");
+			String line = scanner.nextLine();
 
-		{
-       Student student[]=new Student[3];
-       student[0]=new Student(1,"太郎");
-       student[1]=new Student(2,"次郎");
-       student[2]=new Student(3,"三郎");
+			String[] inputInfo = line.split(",");
 
-       for(int i=0;i<3;i++){
-           System.out.println("出席番号 "+student[i].num+", 名前 "+student[i].name);
-       }
-       }
-		*/
-
-
-		{
-		Car car [] = new Car[3];
-		car[0] = new Car();
-		car[1] = new Car();
-		car[2] = new Car();
-
-		car[0].color = "Red";
-		car[1].color = "blue";
-		car[2].color = "green";
-
-		// ★ 変数carに格納されているインスタンスのgasolineフィールドに、50を代入してください
-		car[0].gasoline = 40;
-		car[1].gasoline = 50;
-		car[2].gasoline = 60;
-
-
-
-		// 目的地までの距離
-		final int distance = 250;
-
-		int total = 0;
-		int times = 0;
-
-		/*public int run() {
-
-			int num = 0 ;
-
-			gasoline --;
-			if (num > 0) {
-				num = new java.util.Random().nextInt(15);
-			}else {
-				num =  -1 ;
-			}
-			return num + 1;
-
-			}*/
-		for(int i=0;i<3;i++){
-        System.out.println(car[i].color);
-        total = 0 ;
-        times = 0 ;
-		 while(true) {
-			int result = car[i].run();
-			times++;
-			if (result == -1) {
-				System.out.println("目的地に到達できませんでした");
-				break;
-			}else {
-				total += result;
-			}
-
-			if (total >= distance) {
-				System.out.println("目的地にまで"+times+"時間かかりました。残りのガソリンは、"+car[i].gasoline+"リットルです");
-				break;
-			}
-		 }
+			cars[i].serialNo = Integer.parseInt(inputInfo[0]);
+			cars[i].color = inputInfo[1];
+			cars[i].gasolin = Integer.parseInt(inputInfo[2]);
 		}
-	}
+
+		// それぞれの車を走らせる。
+		final int distance = 200;
+		int[] count = new int[cars.length];
+
+		for (int i = 0; i < cars.length; i++) {
+			int move = 0;
+			while (distance - move > 0) {
+				int ret = cars[i].run();
+				if (ret == -1) {
+					count[i] = -1;
+					break;
+				}
+
+				move += ret;
+				count[i]++;
+			}
+		}
+
+		// 出力
+		for (int i = 0; i < count.length; i++) {
+			if (count[i] == -1) {
+				System.out.println((i + 1) + "台目は目的地に到達できませんでした");
+			} else {
+				System.out.println((i + 1) + "台目の車が掛かった時間：" + count[i] + "時間");
+			}
+		}
 	}
 }

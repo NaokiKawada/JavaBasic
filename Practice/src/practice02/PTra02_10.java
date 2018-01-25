@@ -21,8 +21,11 @@ public class PTra02_10 {
 		 * ※ 日本円には小数点がありませんので、整数の値で出力してください(少数部分は切り捨て)
 		 * ※ プログラムは何行書いても良いです
 		 */
-        final double PI = (1000-(coffee*2+snack)*1.08);
-		System.out.println(PI-0.8);
+		int total = (coffee * 2) + snack;	// 合計金額
+		double tax = total * 0.08;			// 消費税の金額
+		int taxTruncation = (int)tax;	// 日本円は小数点が無いので、小数点以下を切り捨て
+		moneyInHand = moneyInHand - (total + taxTruncation);	// 所持金から、合計金額＋消費税を引く
+		System.out.println("所持金：" + moneyInHand);
 
 
 
