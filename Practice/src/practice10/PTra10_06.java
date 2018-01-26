@@ -35,7 +35,7 @@ public class PTra10_06 {
 
 			cars[i].serialNo = Integer.parseInt(inputInfo[0]);
 			cars[i].color = inputInfo[1];
-			cars[i].gasolin = Integer.parseInt(inputInfo[2]);
+			cars[i].gasoline = Integer.parseInt(inputInfo[2]);
 		}
 
 		// それぞれの車を走らせる。
